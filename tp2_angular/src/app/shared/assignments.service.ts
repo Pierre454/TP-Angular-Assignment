@@ -13,16 +13,19 @@ export class AssignmentsService {
 
   assignments:Assignment[] = [
     {
+      id:1,
       nom:"TP WebComponents INTENSE",
       dateDeRendu:new Date('2020-11-17'),
       rendu:true
     },
     {
+      id:2,
       nom:"TP Angular INTENSE",
       dateDeRendu:new Date('2020-12-03'),
       rendu:false
     },
     {
+      id:3,
       nom:"TP React INTENSE",
       dateDeRendu:new Date('2021-01-10'),
       rendu:false
@@ -31,6 +34,10 @@ export class AssignmentsService {
 
   getAssignments():Observable<Assignment[]> {
     return of(this.assignments);
+  }
+
+  getNewId():number{
+    return this.assignments.length+1;
   }
 
   addAssignment(assignment:Assignment):Observable<string> {
